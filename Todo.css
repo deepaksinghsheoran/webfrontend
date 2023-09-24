@@ -1,0 +1,179 @@
+.todo-container {
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+.input-bar {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 80%;
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 3px;
+    margin-right: 10px;
+    outline: none;
+}
+
+button#addTask {
+    padding: 15px 20px;
+}
+
+.task-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.task-filters {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.task-filters div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.task-filters p {
+    margin-right: 10px;
+    cursor: pointer;
+}
+.task-filters span {
+    margin-right: auto;
+}
+
+.selected {
+    font-weight: bold;
+}
+
+.task-filters p:not(.selected) {
+    font-weight: normal;
+    color: #777;
+    cursor: pointer;
+}
+
+hr {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.task-container span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+
+.task-container button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    appearance: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 70%;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    margin: 15% auto;
+}
+
+input[type="checkbox"]:checked::before {
+    background-color: #007bff;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add animation for deleting tasks */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply animation when adding a task */
+.task-container.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Apply animation when deleting a task */
+.task-container.fade-out {
+    animation: fadeOut 0.5s ease-in-out;
+}
